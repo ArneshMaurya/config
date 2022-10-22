@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Server port="${tomcat.internalserver.port}" shutdown="SHUTDOWN">
 
-  <Listener className="de.hybris.tomcat.HybrisGlobalResourcesLifecycleListener"/>
-  <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="${tomcat.jmx.port}" rmiServerPortPlatform="${tomcat.jmx.server.port}"/>
+<Server port="${tomcat.internalserver.port}" shutdown="SHUTDOWN">
+
+  <Listener className="de.hybris.tomcat.HybrisGlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="${tomcat.jmx.port}" rmiServerPortPlatform="${tomcat.jmx.server.port}" />
 
 
   <GlobalNamingResources>
@@ -40,13 +41,46 @@
   </GlobalNamingResources>
 
 
-  <Service name="Catalina">
+  <Service name="Catalina" >
 
-	<Executor maxIdleTime="${tomcat.maxidletime}" maxThreads="${tomcat.maxthreads}" minSpareThreads="${tomcat.minsparethreads}" name="hybrisExecutor" namePrefix="hybrisHTTP"/>
+	<Executor     name="hybrisExecutor"
+			        namePrefix="hybrisHTTP"
+			        maxThreads="${tomcat.maxthreads}"
+			        minSpareThreads="${tomcat.minsparethreads}"
+			        maxIdleTime="${tomcat.maxidletime}"/>
 
-    <Connector URIEncoding="UTF-8" acceptCount="100" connectionTimeout="20000" disableUploadTimeout="true" enableLookups="false" executor="hybrisExecutor" maxHttpHeaderSize="8192" maxPostSize="6291456" maxThreads="${tomcat.maxthreads}" port="${tomcat.http.port}" protocol="HTTP/1.1"/>
+    <Connector port="${tomcat.http.port}"
+			   maxHttpHeaderSize="8192"
+			   maxPostSize="6291456"
+               maxThreads="${tomcat.maxthreads}"
+               protocol="HTTP/1.1"
+               executor="hybrisExecutor"
+               enableLookups="false"
+               acceptCount="100"
+               connectionTimeout="20000"
+               URIEncoding="UTF-8"
+               disableUploadTimeout="true" />
 
-    <Connector SSLEnabled="true" URIEncoding="UTF-8" acceptCount="${tomcat.acceptcount}" clientAuth="false" connectionTimeout="20000" disableUploadTimeout="true" enableLookups="false" executor="hybrisExecutor" keyAlias="${tomcat.ssl.keystore.alias}" keystoreFile="${tomcat.ssl.keystore.path}" keystorePass="${tomcat.ssl.keystore.password}" maxHttpHeaderSize="8192" maxPostSize="6291456" maxThreads="150" port="${tomcat.ssl.port}" protocol="HTTP/1.1" scheme="https" secure="true" sslProtocol="TLS"/>
+    <Connector port="${tomcat.ssl.port}"
+			   maxHttpHeaderSize="8192"
+			   maxPostSize="6291456"
+               maxThreads="150"
+               protocol="HTTP/1.1"
+               executor="hybrisExecutor"
+               enableLookups="false"
+               acceptCount="${tomcat.acceptcount}"
+               connectionTimeout="20000"
+               disableUploadTimeout="true"
+               URIEncoding="UTF-8"
+               SSLEnabled="true"
+					scheme="https"
+					secure="true"
+					clientAuth="false"
+   				sslProtocol = "TLS"
+   				keyAlias="${tomcat.ssl.keystore.alias}"
+   				keystoreFile="${tomcat.ssl.keystore.path}"
+   				keystorePass="${tomcat.ssl.keystore.password}"
+                />
 
     <!--
     This might evaluate into 
@@ -55,13 +89,24 @@
      --> 
 	${tomcat.connectors.ajp.plain}	
 
-    <Engine defaultHost="localhost" name="Catalina" startStopThreads="${tomcat.startStopThreads}">
+    <Engine name="Catalina" defaultHost="localhost" startStopThreads="${tomcat.startStopThreads}">
 
-			<Valve className="org.apache.catalina.valves.AccessLogValve" directory="${HYBRIS_LOG_DIR}/tomcat" pattern="combined" prefix="access." suffix=".log"/>
+			<Valve 	className="org.apache.catalina.valves.AccessLogValve"
+             		directory="${HYBRIS_LOG_DIR}/tomcat"
+	      		 	prefix="access."
+        	   		suffix=".log"
+	      		 	pattern="combined"
+          />
 
-      <Host appBase="webapps" autoDeploy="false" name="localhost" startStopThreads="0" unpackWARs="false">
+      <Host 	name="localhost"
+      			appBase="webapps"
+		       	unpackWARs="false"
+		       	autoDeploy="false"
+		       	startStopThreads="${tomcat.startStopThreads}">
 		       	
-		        <Valve className="org.apache.catalina.valves.ErrorReportValve" showReport="${tomcat.errorReport.showReport}" showServerInfo="${tomcat.errorReport.showServerInfo}"/>
+		        <Valve className="org.apache.catalina.valves.ErrorReportValve" 
+		               showReport="${tomcat.errorReport.showReport}" 
+		               showServerInfo="${tomcat.errorReport.showServerInfo}"/>
 
 			${tomcat.webapps}
 

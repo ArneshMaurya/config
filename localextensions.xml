@@ -114,13 +114,13 @@
     <extension name='odata2webservicesfeaturetests' />
     <extension name='integrationbackoffice' />
 	-->
-	
-  <extension name='trainingfulfilmentprocess' />
-  <extension name='trainingcockpits' />
-  <extension name='trainingcore' />
-  <extension name='trainingfacades' />
-  <extension name='trainingtest' />
-  <extension name='traininginitialdata' />
-  <extension name='trainingstorefront' />
+    <extension name="training2ycommwebservices"/>
+     <extension name="trainingfulfilmentprocess"/>
+     <extension name="trainingcockpits"/>
+     <extension name="trainingcore"/>
+     <extension name="trainingfacades"/>
+     <extension name="trainingtest"/>
+     <extension name="traininginitialdata"/>
+     <extension name="trainingstorefront"/>
   </extensions>
 </hybrisconfig>

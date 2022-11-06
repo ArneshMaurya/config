@@ -113,8 +113,9 @@
     <extension name='odata2webservices' />
     <extension name='odata2webservicesfeaturetests' />
     <extension name='integrationbackoffice' />
-	-->
+
     <extension name="training2ycommwebservices"/>
+    -->
      <extension name="trainingfulfilmentprocess"/>
      <extension name="trainingcockpits"/>
      <extension name="trainingcore"/>

@@ -1,0 +1,1003 @@
+#New added properties for Upgrade
+commerceservices.org.unit.path.generation.enabled=false
+# Solr client pool configuration
+solrfacetsearch.solrClientPool.checkInterval=0
+# If set to true, a full indexing operation will be performed during a server startup, for all not indexed backoffice solr indexes
+backoffice.solr.search.index.autoinit=false
+#line.separator
+#line.separator=|
+storefrontContextRoot=/
+
+# solr autostart disable
+solrserver.instances.default.autostart=false
+
+# place your custom properties into this file instead of modifying the project.properties
+# all properties in this file have higher priority and will overwrite the platform/project.properties settings.
+
+media.legacy.prettyURL=true
+cronjob.timertask.loadonstartup=false
+task.processing.enabled=true
+#build.development.mode=false
+
+#Increase startup Speed.. Remove comments char below
+#build.parallel=true
+installed.tenants=
+
+## INC3894237 - setting lockTimeout | queryTimeout | cancelQueryTimeout | changed the port and user
+db.url=jdbc:sqlserver://127.0.0.1:64772;databaseName=B2BPQA;responseBuffering=adaptive;loginTimeout=10
+db.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+db.username=sqluser
+db.password=12345
+db.tableprefix=
+
+#admin pass
+initialpassword.admin=nimda
+
+
+##INC1592176##INC1807241##INC4602182
+ccemaillist.remove.ids=sarah.a.byrd@medtronic.com,hunter.j.ferguson@medtronic.com,terry.tebbenkamp@medtronic.com,lindsey.danielson@medtronic.com,mikel.mancini@medtronic.com,rick.j.slomkowski@medtronic.com,adam.p.mclain@medtronic.com,daniel.p.murphy@medtronic.com,greg.wagg@medtronic.com,jason.c.claus@medtronic.com,justin.b.nash@medtronic.com,lucas.m.tronick@medtronic.com,matthew.p.kuzma@medtronic.com,michael.palesse@medtronic.com,stephen.frost@medtronic.com,thomas.mclain@medtronic.com,tracy.foran@medtronic.com,claire.matteson@medtronic.com,chad.mullen@medtronic.com,lindsay.a.stearns@medtronic.com
+
+
+sonar.projectName=Medtronic
+sonar.projectKey=Medtronic
+sonar.projectVersion=1.0
+sonar.extensions=medtronicb2bcore,medtronicb2bcommons,medtronicb2bbackoffice,medtronicb2bcommercewebservices,medtronicb2bcommercewebservicestest,medtronicb2bfacades,medtronicb2binitialdata,medtronicb2bintegrationservices,medtronicb2bstorefront,medtronicb2btest
+#for SonarQube > 6.4
+sonar.host.url=http://localhost:9000
+sonar.login=d4d2dd84cdb5c02f72179bd96f9d9ecfb4341caa
+#for SonarQube <= 6.4
+#sonar.jdbc.url=jdbc:sqlserver://127.0.0.1:64771/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
+#for SonarQube <= 6.4
+#sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
+
+
+#sonar.projectName=Medtronic
+#sonar.projectKey=Medtronic
+#sonar.projectVersion=1.0
+#sonar.extensions=medtronicstorefront
+#for SonarQube > 6.4
+#sonar.host.url=http://localhost:9000
+#sonar.login=f9e114de68bb77a51f890900458568d6b422f6b6
+
+
+
+#------------------------------------------------------ PDEV Database----------------------------------------------------------------------------
+
+#build.development.mode=false
+#db.url=jdbc:sqlserver://delvmpwmmedtr01.sapient.com:3341;databaseName=B2BPDEV;responseBuffering=adaptive;loginTimeout=10
+#db.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#db.username=med_b2b_pdev
+#db.password=med_b2b_pdev@1
+#db.tableprefix=
+
+#------------------------------------------------------- RDEV DB -----------------------------------------------------------------------------
+#db.url=jdbc:sqlserver://DEL2L374MEDTR.sapient.com:1433;databaseName=B2BRQA;responseBuffering=adaptive;loginTimeout=10
+#db.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#db.username=med_b2b_rqa
+#db.password=med_b2b_rqa@1
+#db.tableprefix=
+
+
+#db.url=jdbc:sqlserver://delvmpwmmedtr01.sapient.com:3341;databaseName=B2BLDEV;responseBuffering=adaptive;loginTimeout=10
+#db.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#db.username=med_b2b_ldev
+#db.password=med_b2b_ldev@1
+#db.tableprefix=
+
+#db.url=jdbc:sqlserver://delvmpwmmedtr01.sapient.com:3341;databaseName=B2BEDEV;responseBuffering=adaptive;loginTimeout=10
+#db.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#db.username=med_b2b_edev
+#db.password=med_b2b_edev@1
+#db.tableprefix=
+
+
+
+#------------------------------------------------------Build Settings----------------------------------------------------------------------------
+classloader.monitor.enabled=true
+
+# System ID
+license.sap.sapsystem=HYP
+
+#------------------------------------------------------Default Hybris Properties----------------------------------------------------------------------------
+regioncache.entityregion.size=200000
+Tenant=master
+hac.webroot=/admin
+
+#------------------------------------------------------Tomcat------------------------------------------------------------------------------------------------
+
+tomcat.jvm.route=localdev
+tomcat.http.port=9001
+tomcat.ssl.port=9002
+tomcat.ajp.port=8009
+
+scheme.protocol.value=https
+SSLEnabled.value=true
+tomcat.secure=true
+keystore.file.name=keystore
+hybris.keystore.alias=hybris
+
+
+build.compiler=modern
+build.target=11
+#tomcat.generaloptions=-server -XX:PermSize=300M -XX:MaxPermSize=300m -Xms2G -Xmx2G -Xshare:off -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8086 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Duser.language=en -Djava.endorsed.dirs="%CATALINA_HOME%/lib/endorsed" -Dcatalina.base=%CATALINA_BASE% -Dcatalina.home=%CATALINA_HOME% -Dfile.encoding=UTF-8 -Djava.io.tmpdir="${HYBRIS_TEMP_DIR}" -XX:NewRatio=5 -XX:SurvivorRatio=4 -Xss256K -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=65 -XX:+HeapDumpOnOutOfMemoryError -Xloggc:${HYBRIS_LOG_DIR}/java_gc.log -XX:HeapDumpPath=${HYBRIS_LOG_DIR}/ -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000  -Dcom.sun.net.ssl.enableECC=false -Djsse.enableSNIExtension=true  -Dorg.apache.cxf.Logger=org.apache.cxf.common.logging.Log4jLogger -Dcom.sun.xml.ws.transport.http.client.HttpTransportPipe.dump="true" -Dcom.sun.xml.ws.transport.http.HttpAdapter.dump="true" -XX:+DisableExplicitGC -Dhttps.protocols="TLSv1.1,TLSv1.2"
+tomcat.generaloptions=-Xms8G -Xmx8G -Xshare:off -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false  -Dorg.tanukisoftware.wrapper.WrapperManager.mbean=true -Dorg.apache.cxf.Logger=org.apache.cxf.common.logging.Log4jLogger  -Djava.io.tmpdir="${HYBRIS_TEMP_DIR}" -Dcom.sun.net.ssl.enableECC=false -Djsse.enableSNIExtension=true -Dcom.sun.xml.ws.transport.http.client.HttpTransportPipe.dump="true" -Dcom.sun.xml.ws.transport.http.HttpAdapter.dump="true"  -XX:+DisableExplicitGC -Dhttps.protocols="TLSv1.1,TLSv1.2"
+#------------------------------------------------------Log4j----------------------------------------------------------------------------------------------------
+
+log4j.rootLogger=info,LWP,perf,CONSOLE
+
+log4j.appender.CONSOLE.Threshold=info,error
+log4j.logger.CONSOLE=info, CONSOLE
+
+log4j.logger.LWP=debug, LWP
+log4j.appender.LWP.Threshold=INFO
+log4j.appender.LWP=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.LWP.File=${HYBRIS_LOG_DIR}/medtronic-platform-console.log
+log4j.appender.LWP.Append=true
+log4j.appender.LWP.layout=org.apache.log4j.PatternLayout
+#INC1405163
+log4j.appender.LWP.layout.ConversionPattern=%d %-5p [%t] [%c{1}] %m%n
+
+## Performance Logging Configurations (Enable for Perf Logs) ===========
+log4j.logger.perf=debug, perf
+#INC1405163
+log4j.appender.perf.Threshold=INFO
+log4j.appender.perf=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.perf.File=${HYBRIS_LOG_DIR}/mdt-perf.log
+log4j.appender.perf.Append=true
+log4j.appender.perf.layout=org.apache.log4j.PatternLayout
+#INC1405163
+log4j.appender.perf.layout.ConversionPattern=%d %-5p [%t] [%c{1}] %m%n
+
+## Integration Logging Configurations (Enable for Perf Logs) ===========
+log4j.logger.Integration=debug,Integration
+log4j.appender.Integration.Threshold=INFO
+log4j.appender.Integration=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.Integration.File=${HYBRIS_LOG_DIR}/hybris_INBOUND.log
+log4j.appender.Integration.Append=true
+log4j.appender.Integration.layout=org.apache.log4j.PatternLayout
+#INC1405163
+log4j.appender.Integration.layout.ConversionPattern=%d %-5p [%t] [%c{1}] %m%n
+log4j.logger.com.medtronic.b2b.integrationservices=debug,Integration
+log4j.additivity.com.medtronic.b2b.integrationservices=true
+log4j.additivity.com.medtronic.b2b.integrationservices.servlet.SAPUpdateConfirmationProcessor=false
+
+## Integration Logging Configurations (Enable for Perf Logs) ===========
+log4j.logger.SapRequestResponse=debug,SapRequestResponse
+log4j.appender.SapRequestResponse.Threshold=INFO
+log4j.appender.SapRequestResponse=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.SapRequestResponse.File=${HYBRIS_LOG_DIR}/SAPREQUESTRESPONSE.log
+log4j.appender.SapRequestResponse.Append=true
+log4j.appender.SapRequestResponse.layout=org.apache.log4j.PatternLayout
+#INC1405163
+log4j.appender.SapRequestResponse.layout.ConversionPattern=%d %-5p [%t] [%c{1}] %m%n
+log4j.logger.com.medtronic.b2b.integrationservices.servlet.SAPUpdateConfirmationProcessor=debug,SapRequestResponse
+log4j.logger.com.medtronic.b2b.integrationservices.facade.impl.SapUpdateConfirmationFacadeImpl=debug,SapRequestResponse
+log4j.logger.org.apache.axis.transport.http.HTTPSender=debug
+log4j.logger.org.apache.axis2.transport.http.server.wire=debug
+log4j.additivity.com.medtronic.b2b.integrationservices.servlet.SAPUpdateConfirmationProcessor=true
+
+log4j.logger.com.medtronic=debug, LWP, perf
+log4j.additivity.com.medtronic=false
+
+## Integration Logging Configurations (Enable for Perf Logs) ===========
+log4j.logger.MoveRequestResponse=debug,MoveRequestResponse
+log4j.appender.MoveRequestResponse.Threshold=INFO
+log4j.appender.MoveRequestResponse=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.MoveRequestResponse.File=${HYBRIS_LOG_DIR}/MoveRequestResponse.log
+log4j.appender.MoveRequestResponse.Append=true
+log4j.appender.MoveRequestResponse.layout=org.apache.log4j.PatternLayout
+#INC1405163
+log4j.appender.MoveRequestResponse.layout.ConversionPattern=%d %-5p [%t] [%c{1}] %m%n
+log4j.logger.com.medtronic=debug, LWP, perf
+log4j.additivity.com.medtronic=false
+
+log4j.logger.Alert=debug,Alert
+log4j.appender.Alert.Threshold=INFO
+log4j.appender.Alert=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.Alert.File=${HYBRIS_LOG_DIR}/hybris_Alert.log
+log4j.appender.Alert.MaxFileSize=1024MB
+log4j.appender.Alert.Append=true
+log4j.appender.Alert.layout=org.apache.log4j.PatternLayout
+#INC1405163
+log4j.appender.Alert.layout.ConversionPattern=%d %-5p [%t] [%c{1}] %m%n
+#--------------------------------------------------------SOLR------------------------------------------------------------------------------------------------------
+
+solr.config.url=https://localhost:8983/solr
+#solr.config.url=http://del2l401medtr.sapient.com:8080/solr
+solrserver.instances.default.ssl.enabled=false
+
+#--------------------------------------------------------SMTP-------------------------------------------------------------------------------------------------------
+#mail.smtp.server=localhost
+#mail.smtp.port=25
+#mail.smtp.user=sender@test.com
+#mail.smtp.password=sender123
+
+
+#----------------------------------------------------------PEC Compliant SMTP-----------------------------------------------------------------------------------------
+mail.smtp.server.pec.compliant=sendm.cert.legalmail.it
+mail.smtp.port.pec.compliant=465
+mail.smtp.auth.pec.compliant=true
+mail.smtp.starttls.enable.pec.compliant=true
+mail.smtp.quitwait.pec.compliant=false
+mail.smtp.user.pec.compliant=medtronicitalia.customerservice@legalmail.it
+mail.smtp.password.pec.compliant=Customer$01
+mail.enable.debug.mode=true
+
+
+
+
+# SMTP server used to send emails (mandatory)
+mail.smtp.server=inrelaymail.sapient.com
+hospital.changerequestemail.mdmcsd=hospitalChangeRequestTemplate
+hospital.cr.email.mdm=email.mdt.mdm@yopmail.com
+hospital.cr.email.csd=email.mdt.csd@yopmail.com
+
+# A port number of the SMTP server used for sending emails
+# if different from the default port (optional)
+# mail.smtp.port=25
+mail.smtp.port=25
+#Mail Auth
+mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.smtp.quitwait=false
+# User account and password used for the authentification with the SMTP server (optional)
+mail.smtp.user=test@gmail.com
+mail.smtp.password=hybris123
+#-------------------------------------------------------Site URLs-------------------------------------------------------------------------------------------------
+
+site.b2b.static.assets.url=http://local.myorders.medtronic.com:9001
+site.b2b.static.assets.usage.url=https://local.myorders.medtronic.com:9001
+#site.b2b.static.assets.url=http://10.155.104.120:9001
+site.b2b.static.assets.secure.url=https://local.myorders.medtronic.com:9002
+#site.b2b.static.assets.secure.url=https://10.155.104.120:9002
+
+b2b.site.url.us=http://local.myorders.medtronic.com:9001
+b2b.site.url.ca=http://local.myorders.medtronic.ca:9001
+
+
+#------------------------------------------------------Secure Site URL----------------------------------------------------------------------------
+b2b.site.url.secure.us=https://local.myorders.medtronic.com
+b2b.site.url.secure.ca=https://local.myorders.medtronic.ca
+
+####NURO Experience ##########
+b2b.nuro.site.url.us=https://local.nuro.medtronic.com
+
+
+#-------------------------------------------------------Email URLs--------------------------------------------------------------------------------------------------
+
+b2bResetPassword.generatedLink.us=https://local.myorders.medtronic.com:9002/view/content/resetPassword?renderChangePasswordForm=true
+b2bResetPassword.generatedLink.ca=https://local.myorders.medtronic.ca:9002/view/content/resetPassword?renderChangePasswordForm=true
+
+b2bChangePassword.generatedLink.us=https://local.myorders.medtronic.com:9002
+b2bChangePassword.generatedLink.ca=https://local.myorders.medtronic.ca:9002
+
+b2bSalesRepLogin.generatedLink.us=https://local.myorders.medtronic.com:9002/sales
+b2b.customerServiceEmail.us=ibhatnagar@sapient.com
+b2b.customerServiceEmail.ca=ibhatnagar@sapient.com
+
+b2b.customerServiceEmail.carelink.us=ibhatnagar@sapient.com
+
+b2b.returnCustomerServiceEmail.us=ibhatnagar@sapient.com
+b2b.returnCustomerServiceEmail.ca=ibhatnagar@sapient.com
+
+
+integration.b2b.web.method.submission.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.web.method.submission.support.cc.email=
+
+integration.b2b.hybris.empty.partner.orders.report.support.email=Medtronic_Sapient_Support@yopmail.com
+
+
+b2b.repairCustomerServiceEmail.us=ibhatnagar@sapient.com
+b2b.repairCustomerServiceEmail.ca=ibhatnagar@sapient.com
+
+b2b.returnOrderCorrCSEmail.us=vtyagi5@sapient.com
+b2b.returnOrderCorrCSEmail.ca=vtyagi5@sapient.com
+
+b2b.catalogSupportEmail.ca=MedtronicQATeam@sapient.com
+b2b.patch.corventisSupportEmail.us=ppandey7@sapient.com
+b2b.patch.rejectionSupportEmail.us=MedtronicQATeam@sapient.com
+
+#------------------------------------------------------Integration---------------------------------------------------------------------------------------------------
+
+err.integ.ord.noOrderFoundForOrderId=Cannot find order with id=
+err.hyb.ord.noOrderFoundForSapOrderId=Cannot find order with SAP id=
+
+#------------------------------------------------------Interface Related Properties----------------------------------------------------------------------------
+# Properties to define if b2b integration service stubs are enabled or not.
+stub.b2b.order.create.enabled=N
+stub.b2b.order.simulate.enabled=Y
+stub.b2b.payment.simulate.enabled=N
+stub.b2b.order.header.details=Y
+stub.b2b.order.item.details=Y
+stub.b2b.invoice.fetch.enabled=Y
+stub.b2b.invoice.detail.enabled=Y
+stub.b2b.invoice.email.enabled=Y
+stub.b2b.order.update.enabled=Y
+stub.b2b.device.registration.enabled=Y
+stub.b2b.cod.request.enabled=Y
+stub.b2b.xchannel.enabled=Y
+stub.b2b.patch.simulate.enabled=Y
+stub.b2b.order.change.enabled=Y
+stub.b2b.order.price.enabled=Y
+stub.b2b.file.transfer.enabled=N
+stub.carelink.patient.fetch.simulate.enabled=Y
+stub.carelink.order.status.simulate.enabled=Y
+stub.carelink.registration.data.submission.simulate.enabled=Y
+stub.carelink.monitor.association.simulate.enabled=Y
+stub.contract.create.simulate.enabled=Y
+stub.contract.update.simulate.enabled=Y
+stub.contract.read.simulate.enabled=Y
+stub.subscription.history.simulate.enabled=Y
+stub.customer.create.simulate.enabled=Y
+stub.customer.update.simulate.enabled=Y
+stub.address.standardization.enabled=Y
+stub.dart.registrationid.update.enabled=Y
+stub.carelink.ssotokenvalidation.enabled=Y
+
+stub.b2b.cvg.attachment.fetch.enabled=Y
+stub.b2b.cvg.attachment.upload.enabled=Y
+
+
+
+stub.b2b.deliverynote.detail.enabled=Y
+
+
+care.link.product.default.quantity=1
+carelink.cart.name=C4R3LINKC4RT
+carelink.cart.type=ZOR
+stub.b2b.order.history.header.dataFile=C://StubMode_Order_History_Header_Test_Data.csv
+stub.b2b.order.history.lineItem.dataFile=C://StubMode_Order_History_Item_Test_Data.csv
+b2b.patch.defaultReportOptin.us=default
+
+# B2B Integration Web Service out bound URLs and properties
+
+################# Delivery Notes ####################
+url.ws.b2b.deliverynote.detail.enabled=http://tn-test.medtronic.com:33500/ws/MdtHybris_DeliveryInquiry.webservices:processDeliveryInquiryWS
+url.ws.b2b.deliverynote.detail.enabled.username=hybrisid
+url.ws.b2b.deliverynote.detail.enabled.password=Spring2013
+url.ws.b2b.deliverynote.detail.enabled.timeout=60000
+################# Delivery Notes ####################
+
+
+url.ws.b2b.order.history.header=http://tn-test.medtronic.com:33500/ws/MdtHybris_OrderHistory.webservices:getOrderHistoryWebService
+url.ws.b2b.order.history.header.username=hybrisid
+url.ws.b2b.order.history.header.password=Spring2013
+url.ws.b2b.order.history.header.timeout=120000
+
+url.ws.b2b.order.history.item=http://tn-test.medtronic.com:33500/ws/MdtHybris_OrderStatus.webservices:checkOrderStatusWebService
+url.ws.b2b.order.history.item.username=hybrisid
+url.ws.b2b.order.history.item.password=Spring2013
+## INC3540117 || INC3642657 - increasing time out to 250 seconds
+url.ws.b2b.order.history.item.timeout=250000
+
+
+url.ws.b2b.order.create=http://tn-test.medtronic.com:33500/ws/MdtHybris_CreateOrder.pub.webservices:receiveCreateOrderRequestWebService
+url.ws.b2b.order.create.username=hybrisid
+url.ws.b2b.order.create.password=Spring2013
+url.ws.b2b.order.create.timeout=60000
+
+url.ws.b2b.order.simulate=http://tn-test.medtronic.com:33500/ws/MdtHybris_SimulateOrder.webservices:processOrderSimulationWebService
+url.ws.b2b.order.simulate.username=hybrisid
+url.ws.b2b.order.simulate.password=Spring2013
+url.ws.b2b.order.simulate.timeout=60000
+
+url.ws.b2b.payment.xipay=https://qa01.xipaynet.com/PMXIGGE/XiPay30WS.asmx
+url.ws.b2b.payment.xipay.username=WSAMedtronicQA
+url.ws.b2b.payment.xipay.domain=Paymetric
+url.ws.b2b.payment.xipay.password=Medtronic800*
+url.ws.b2b.payment.xipay.host=qa01.xipaynet.com
+url.ws.b2b.payment.xipay.timeout=60000
+
+url.ws.b2b.order.update=http://tn-test.medtronic.com:33500/ws/MdtHybris_UpdateOrder.webservices:processUpdateOrderWebService
+url.ws.b2b.order.update.username=hybrisid
+url.ws.b2b.order.update.password=Spring2013
+url.ws.b2b.order.update.timeout=60000
+
+url.ws.b2b.invoice.fetch=http://tn-test.medtronic.com:33500/ws/MdtHybris_InvoiceInquiry.webServices:getInvoicePDFWS
+url.ws.b2b.invoice.fetch.username=hybrisid
+url.ws.b2b.invoice.fetch.password=Spring2013
+url.ws.b2b.invoice.fetch.timeout=60000
+
+url.ws.b2b.invoice.detail=http://tn-test.medtronic.com:33500/ws/MdtHybris_InvoiceInquiry.webServices:getInvoiceDetailWS
+url.ws.b2b.invoice.detail.username=hybrisid
+url.ws.b2b.invoice.detail.password=Spring2013
+url.ws.b2b.invoice.detail.timeout=60000
+
+url.ws.b2b.invoice.email=http://tn-test.medtronic.com:33500/ws/MdtHybris_InvoiceInquiry.webServices:getInvoiceDetailAsynchronousWS
+url.ws.b2b.invoice.email.username=hybrisid
+url.ws.b2b.invoice.email.password=Spring2013
+url.ws.b2b.invoice.email.timeout=60000
+
+
+url.ws.b2b.device.registration=http://tn-test.medtronic.com:33500/MdtHybris_DeviceRegistrationExt/webservice/deviceRegistrationWS
+url.ws.b2b.device.registration.username=hybrisid
+url.ws.b2b.device.registration.password=Spring2013
+url.ws.b2b.device.registration.timeout=60000
+
+url.ws.b2b.xchannel=http://tn-test.medtronic.com:33500/ws/MdtHybris_CustomersOptIn.webservices:processCustomersOptInWebService
+url.ws.b2b.xchannel.username=hybrisid
+url.ws.b2b.xchannel.password=Spring2013
+url.ws.b2b.xchannel.timeout=60000
+
+
+url.ws.b2b.cod.price=http://tn-test.medtronic.com:33500/ws/MdtHybris_ProductCatalog.pub.webServices:productCatalogRequest
+url.ws.b2b.cod.price.username=hybrisid
+url.ws.b2b.cod.price.password=Spring2013
+url.ws.b2b.cod.price.timeout=60000
+
+url.ws.b2b.patch.prescription=http://tn-test.medtronic.com:33500/ws/MdtHybris_Prescription.pub.webservices:receivePrescription
+url.ws.b2b.patch.prescription.username=hybrisid
+url.ws.b2b.patch.prescription.password=Spring2013
+url.ws.b2b.patch.prescription.timeout=60000
+
+url.ws.b2b.patch.prescription.serialno.update=http://tn-test.medtronic.com:33500/ws/MdtHybris_Prescription.pub.webservices:receivePrescriptionUpdate
+url.ws.b2b.patch.prescription.serialno.update.username=hybrisid
+url.ws.b2b.patch.prescription.serialno.update.password=Spring2013
+url.ws.b2b.patch.prescription.serialno.update.timeout=60000
+
+url.ws.b2b.order.change=http://tn-test.medtronic.com:33500/ws/MdtHybris_ChangeOrder.webservices:receiveChangeOrderRequest
+url.ws.b2b.order.change.username=hybrisid
+url.ws.b2b.order.change.password=Spring2013
+url.ws.b2b.order.change.timeout=60000
+
+url.ws.b2b.order.price=http://tn-test.medtronic.com:33500/ws/MdtHybris_ProductCatalog.pub.webServices.salesPriceInformation:processSalesPriceInformationWS
+url.ws.b2b.order.price.username=hybrisid
+url.ws.b2b.order.price.password=Spring2013
+url.ws.b2b.order.price.timeout=60000
+
+#Carelink Service URLs
+
+#VA
+url.ws.carelink.patient.fetch=
+
+#########################STUB################################
+url.rest.stub.carelink.order.status.us=http://local.myorders.medtronic.com:9001/medtronicb2bintegrationservices/servlet/carelinkrestsimulator/orderstatus
+url.rest.stub.carelink.order.status.username.us=hybrisid
+url.rest.stub.carelink.order.status.password.us=Spring2013
+url.rest.stub.carelink.order.status.timeout.us=60000
+
+url.rest.stub.carelink.sso.status.us=http://local.myorders.medtronic.com:9001/medtronicb2bintegrationservices/servlet/carelinkssorestsimulator/sso
+url.rest.stub.carelink.sso.status.username.us=hybrisid
+url.rest.stub.carelink.sso.status.password.us=Spring2013
+url.rest.stub.carelink.sso.status.timeout.us=60000
+url.rest.stub.carelink.sso.status.intercept.us=Y
+
+##########################US################################
+url.rest.carelink.order.status.us=http://local.myorders.medtronic.com:9001/medtronicb2bintegrationservices/servlet/carelinkrestsimulator/orderstatus
+url.rest.carelink.order.status.username.us=hybrisid
+url.rest.carelink.order.status.password.us=Spring2013
+url.rest.carelink.order.status.timeout.us=60000
+url.rest.carelink.order.status.intercept.us=Y
+
+url.rest.carelink.sso.status.us=http://local.myorders.medtronic.com:9001/medtronicb2bintegrationservices/servlet/carelinkssorestsimulator/sso
+url.rest.carelink.sso.status.username.us=hybrisid
+url.rest.carelink.sso.status.password.us=Spring2013
+url.rest.carelink.sso.status.timeout.us=60000
+url.rest.carelink.sso.status.intercept.us=Y
+
+##########################CA################################
+url.rest.carelink.order.status.ca=http://local.myorders.medtronic.com:9001/medtronicb2bintegrationservices/servlet/carelinkrestsimulator/orderstatus
+url.rest.carelink.order.status.username.ca=hybrisid
+url.rest.carelink.order.status.password.ca=Spring2013
+url.rest.carelink.order.status.timeout.ca=60000
+url.rest.carelink.order.status.intercept.ca=Y
+
+url.rest.carelink.sso.status.ca=http://local.myorders.medtronic.com:9001/medtronicb2bintegrationservices/servlet/carelinkssorestsimulator/sso
+url.rest.carelink.sso.status.username.ca=hybrisid
+url.rest.carelink.sso.status.password.ca=Spring2013
+url.rest.carelink.sso.status.timeout.ca=60000
+url.rest.carelink.sso.status.intercept.ca=Y
+
+url.ws.carelink.registration.data.submission=http://tn-test.medtronic.com:33500/ws/MdtHybris_PatientEnrollment.webservices:processHybrisPatientEnrollmentWS
+url.ws.carelink.registration.data.submission.username=hybrisid
+url.ws.carelink.registration.data.submission.password=Spring2013
+url.ws.carelink.registration.data.submission.timeout=60000
+
+url.ws.carelink.contract.create=http://tn-test.medtronic.com:33500/ws/MdtHybris_CarelinkContract.webservices:processContractCreateWS
+url.ws.carelink.contract.create.username=hybrisid
+url.ws.carelink.contract.create.password=Spring2013
+url.ws.carelink.contract.create.timeout=60000
+
+url.ws.carelink.contract.update=http://tn-test.medtronic.com:33500/ws/MdtHybris_CarelinkContract.webservices:processContractChangeWS
+url.ws.carelink.contract.update.username=hybrisid
+url.ws.carelink.contract.update.password=Spring2013
+url.ws.carelink.contract.update.timeout=60000
+
+url.ws.carelink.contract.read=http://tn-test.medtronic.com:33500/ws/MdtHybris_CarelinkContract.webservices:processContractReadWS
+url.ws.carelink.contract.read.username=hybrisid
+url.ws.carelink.contract.read.password=Spring2013
+url.ws.carelink.contract.read.timeout=60000
+
+url.ws.customer.create=http://tn-test.medtronic.com:33500/ws/MdtHybris_CustomerCreate.pub.webservices:CustomerCreateWebService
+url.ws.customer.create.username=hybrisid
+url.ws.customer.create.password=Spring2013
+url.ws.customer.create.timeout=60000
+
+url.ws.address.standardization=http://tn-test.medtronic.com:33500/ws/MdtAny_MDM.addressValidation:processAddressDataValidationWS
+url.ws.address.standardization.username=hybrisid
+url.ws.address.standardization.password=Spring2013
+url.ws.address.standardization.timeout=60000
+
+
+
+url.ws.carelink.invoice.history=http://tn-test.medtronic.com:33500/ws/MdtHybris_InvoiceInquiry.webServices:getInvoiceDetailWS
+url.ws.carelink.invoice.history.username=hybrisid
+url.ws.carelink.invoice.history.password=Spring2013
+url.ws.carelink.invoice.history.timeout=60000
+
+url.ws.carelink.monitor.association=http://tn-test.medtronic.com:33500/ws/MdtHybris_PatientMonitor.pub.webServices:processPatientMonitorWS
+url.ws.carelink.monitor.association.username=hybrisid
+url.ws.carelink.monitor.association.password=Spring2013
+url.ws.carelink.monitor.association.timeout=60000
+
+############CVG#######
+
+url.ws.cvg.attachment.fetch=http://tn-test.medtronic.com:33500/ws/MdtHybris_ConsignmentAgreement.webServices:getConsignmentAgreementPDFWS
+url.ws.cvg.attachment.fetch.username=hybrisid
+url.ws.cvg.attachment.fetch.password=Spring2013
+url.ws.cvg.attachment.fetch.timeout=60000
+
+########NURO Service URL##################
+url.ws.nuro.devicesync.fetch=http://tn-test.medtronic.com:33500/ws/MdtHybris_NURODevice.pub.webservices:receiveNURODeviceUsageWS
+url.ws.nuro.devicesync.fetch.username=hybrisid
+url.ws.nuro.devicesync.fetch.password=Spring2013
+url.ws.nuro.devicesync.fetch.timeout=60000
+########NURO Service URL##################
+
+###SST SSO parameters###
+url.ws.b2b.sso=https://mdtsts-stg.medtronic.com
+url.ws.b2b.sso.endpoint.auth=/mdt/authUser
+url.ws.b2b.sso.endpoint.userinfo=/mdt/openid/connect/v1/userinfo
+url.ws.b2b.sso.client.id=bdb97156-ae30-43bb-b848-6b95dc2f97a3
+url.ws.b2b.sso.client.secret=0a30ad9c-0e52-4ed5-a081-ddd810a9c21e
+url.ws.b2b.sso.cert.password=Fra3dIGonA*eYra
+url.ws.b2b.sso.cert.location=${HYBRIS_CONFIG_DIR}//certs//svc-hybris-sapient.pfx
+siteminder.logout.url=https://wwwp.medtronic.com/extregistration/neuroHCP/nhcpLogout
+enableSSO=OFF
+path.catalog.on.demand.directory=C:/myfiles/cod
+
+integration.b2b.history.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.invoice.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.order.update.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.order.create.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.order.simulate.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.device.registration.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.cross.channel.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.cod.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.audit.trail.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.customer.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.linq.patient.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.user.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.patch.user.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.salesrep.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.order.change.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.file.transfer.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.patch.prescription.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.patch.outstanding.prescription.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.patch.prescription.submitted.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.prescription.submission.send.email=ecommercesupport-global@medtronic.com
+integration.b2b.hybris.product.report.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.address.standardization.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.contract.read.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.contract.change.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.contract.create.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.customer.create.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.carelink.orderstatus.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.carelink.sso.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.monitor.association.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.patient.enrollment.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.attachment.fetch.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.file.upload.sftp.support.email=Medtronic_Sapient_Support@yopmail.com
+
+integration.b2b.hybris.carelink.patient.report.support.email=josh.e.link@medtronic.com,christopher.m.bullis@medtronic.com,rs.myorders@medtronic.com
+integration.b2b.hybris.linq.patient.full.report=N
+integration.b2b.hybris.user.full.report=N
+
+integration.b2b.hybris.linq.report.support.email=christy.l.anderson@medtronic.com
+
+#Impex folder location
+systemsetup.base.location=/Development/Frameworks/Impex/
+
+linq.uploadPhysician.header=Customer Number,Physician No,Physician First Name,Physician Middle Name,Physician Last Name,Pref Email,Primary Address1,Primary Address2,Primary City,Primary Country,Primary State Code,Primary Postal Code,Primary Address Phone Number,NPI Number
+integration.b2b.patch.physician.report.support.email=Medtronic_Sapient_Support@yopmail.com
+
+email.from.address.us=no-reply.myorders@medtronic.com
+salesRep.sendRequestEmail=ppandey7@sapient.com
+
+global.shipto.account.number=0005770010
+
+##HCPO UploadFolderLocation
+localserver.file.location.zor=${HYBRIS_DATA_DIR}\\HCPO\\
+
+# Configurable Sterlization hours
+sterlization.hours = 24
+
+#SFTP remote server properties
+integration.file.transfer.remote.host=b2bdemo.myorders.medtronic.com
+integration.file.transfer.remote.user=sftpuser
+integration.file.transfer.remote.password=chg0246011
+integration.file.transfer.remote.path=/app/cod/
+
+cvg.integration.file.transfer.remote.host=b2bdemo.myorders.medtronic.com
+cvg.integration.file.transfer.remote.user=sftpuser
+cvg.integration.file.transfer.remote.password=chg0246011
+cvg.integration.file.transfer.remote.path=/
+
+cvg.poupload.integration.file.transfer.remote.host=10.202.6.74
+cvg.poupload.integration.file.transfer.remote.user=sftpuser
+cvg.poupload.integration.file.transfer.remote.password=chg0246011
+cvg.poupload.integration.file.transfer.remote.path=/app/sftpuser/poDocumentsUpload/
+
+
+
+cvg.localserver.file.location=${HYBRIS_DATA_DIR}//attachments//
+
+localserver.upload.remotefile.location=C\:\\HybrisSurgery\\UPLOAD\\
+
+#SFTP cardiocom remote server properties
+cardiocom.integration.file.transfer.remote.host=10.207.5.202
+cardiocom.integration.file.transfer.remote.user=sftpuser
+cardiocom.integration.file.transfer.remote.password=chg0246011
+cardiocom.integration.file.transfer.remote.path=/app/cod/cardiocom/
+
+#local server upload file location
+localserver.upload.file.location=C://HybrisSurgery/UPLOAD/
+
+division.catalog.online=Online
+product.catalog.staged.US=us_product_b2b
+stub.b2b.order.simulate.priceerror.productCFN=X0810472,X0805295
+stub.b2b.order.simulate.listPriceFlag=true
+stub.b2b.order.simulate.serviceerror=false
+stub.b2b.order.simulate.ChangeInPrice=1
+stub.b2b.order.simulate.timeToCheckPrice=60
+
+prodFileLocation=C\:\\camel\\source\\products.txt
+prodBomFileLocation=C\:\\camel\\source\\productsbom.txt
+fullLoadFileLocation=C\:\\camel\\source\\fullLoad.txt
+
+stub.b2b.payment.invalid.cardNo=4444444444444444
+stub.b2b.payment.fullAuth.failed.cardNo.pattern=4141
+
+#mpxr url for reporting damaged product
+mpxr.url=https://wwwp.medtronic.com/mcc
+
+local.database=true
+soldto.ids.size=500
+
+#Location for daily rate excel file
+dailyrate.remotefile.location= ${HYBRIS_DATA_DIR}//Daily_Rates//daily_rate_data.xls
+division.catalog.staged=Staged
+
+## setting limit of the facet values for a single facet as unlimited
+facet.limit.default=-1
+
+## Rest data Initial Load file path
+rest.pushToEtl.model=HandlingUnit
+rest.pushToEtl.pk=123
+rest.pushToEtl.eventType=HandlingUnit
+
+###Allow multiple Cc/Bcc in email Receipients
+email.recipient.multipleCcAllowed=true
+
+
+
+#Increasing JVM memory as some some JUNIT run is failing on Sonar
+standalone.javaoptions=-Xmx4g -XX:MaxPermSize=1G -XX:-AggressiveOpts
+
+servicelayer.prefetch=literal
+
+#Order Invoice Request
+order.invoice.language.code=en
+carelink.pp.security.filter.isenabled=false
+carelink.pp.security.filter.isenabled=false
+
+#execute lock queries
+event.listener.execution.enable=true
+#Nuro header and footer xml url
+nuro.oraclewebcenter.headerurl=/nurosharedcontent/shared_header.xml
+nuro.oraclewebcenter.footerurl=/nurosharedcontent/shared_footer.xml
+stub.nuro.oraclewebcenter=Y
+LINQ.telemetry.cfns=
+
+##SSO Password rest & change URL###
+nuro.sso.changepassword.url=https://msa-test.medtronic.com/iam/im/ent/imcss/index.jsp?task.tag=ChangeMyPassword
+nuro.sso.resetpassword.url=https://msa-test.medtronic.com/pwdmgmt2/id_user.htm
+#Nuro header and footer xml url
+nuro.oraclewebcenter.headerurl=/nurosharedcontent/shared_header.xml
+nuro.oraclewebcenter.footerurl=/nurosharedcontent/shared_footer.xml
+stub.nuro.oraclewebcenter=Y
+
+#SSO Redirect INC3458315
+nuro.redirect.domain=https://wwwp-test.medtronic.com/hcpprofile-static/nuro/redirect-test.html
+nuro.professional.redirect=false
+
+#INC3296296
+nuro.disable.redirect.url=http://www-test.medtronic.com/us-en/errors/account-inactive.html
+nuro.default.redirect.url=http://www-test.medtronic.com/us-en/errors/account-inactive.html
+
+care.link.product.default.quantity=1
+carelink.cart.name=C4R3LINKC4RT
+carelink.cart.type=ZOR
+LINQ.telemetry.cfns=
+nuro.owc.request.access.url = https://wwwp-test.medtronic.com/extregistration/nuroAUS/registration
+
+
+##NURO Analytics
+nuro.analytics.enabled=Y
+#NURO CCB#R-02012  CR
+nuro.analytics.header.script=//assets.adobedtm.com/ce8746a9125c5b45bcf05e12f84658c0c6ff5b9a/satelliteLib-ac578fadd117fd9de0670ce7d976e965f3d949c9-staging.js
+#INC3563575
+myorders.analytics.header.script=//assets.adobedtm.com/ce8746a9125c5b45bcf05e12f84658c0c6ff5b9a/satelliteLib-0bfaf6b9deb2f45a0c974933863e6d1c93808f91-staging.js
+
+#B-12644 changes
+b2b.creditCard.paymentAllowed=false
+
+
+#execute lock queries
+execute.lock.queries=Y
+event.listener.execution.enable=true
+
+# Flag to enable disable rule engine for eFITR order approval
+cvg.eFITR.ruleEngine.enable=true
+
+#CVG DM Attacment MAX limit
+cvg.login.sso.enabled=false
+cycle.count.stock.days=365
+COUNTRY=US
+
+environmentPrefix=1:
+
+#for language
+default.list.language=English:en,Spanish:es,Russian:ru,Arabic:ar,Farsi:fa,Chinese:zh,Polish:pl
+
+#for enabling the product unapprove job
+integration.product.unapprove.enable = N
+
+
+cvg.aa.bulkuload.error.file.location=${HYBRIS_DATA_DIR}\\AA_BULKUPLOAD_ERROR\\
+
+carelink.fetch.invoice = true
+stub.b2b.invoice.detail.enabled = Y
+
+nuro.sso.enabled=false
+#INC3424943
+integration.b2b.hybris.caaa.audit.report.support.email=abc@yopmail.com,bcd@yopmail.com
+
+#for enabling the product unapprove job
+integration.product.unapprove.enable = N
+
+
+cvg.aa.bulkuload.error.file.location=${HYBRIS_DATA_DIR}\\AA_BULKUPLOAD_ERROR\\
+
+carelink.fetch.invoice = true
+stub.b2b.invoice.detail.enabled = Y
+
+nuro.sso.enabled=false
+
+##Paymetric
+integration.paymentgateway.paymetric.merchantGUID=88eade06-ce25-4c08-b647-393aaff89757
+integration.paymentgateway.paymetric.sharedKey=6i+PS5j-kY*9$s3J8=Ep_e4ZcX{7/2Ko
+integration.paymentgateway.paymetric.DIeCommURL=https://qaapp02.xisecurenet.com/diecomm
+paymetric.root.of.site=https://local.myorders.medtronic.com:9002/view/content/PaymetricDetails/
+integration.b2b.paymetric.access.token.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.paymetric.payment.response.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.paymetric.payment.auth.email=Medtronic_Sapient_Support@yopmail.com
+
+lm.exit.prescription.email.to.address=prescriptionexit@yopmail.com
+#INC1635929
+lm.exit.prescription.email.cc.address=michelle.l.stenzel@medtronic.com,john.c.doerfler@medtronic.com,pete.keen@medtronic.com
+lm.renew.prescription.email.to.address=prescriptionrenew@yopmail.com
+####INC1679933 starts
+lm.renew.prescription.email.cc.address=michelle.l.stenzel@medtronic.com,john.c.doerfler@medtronic.com, pete.keen@medtronic.com,emery.p.heuer@medtronic.com
+####INC1679933 ends
+
+
+lmm.mpr.email.to.address=Medtronic_Sapient_Support@yopmail.com
+lmm.mpr.email.from.address=Medtronic_Sapient_Support@yopmail.com
+
+paymetric.b2b.xi.plugin.script.url=https://qaapp02.XiSecurenet.com/DIeComm/Scripts/XIPlugin/XIPlugin-1.1.0.js
+paymetric.b2b.xi.frame.script.url=https://qaapp02.xisecurenet.com/diecomm/scripts/XIFrame/XIFrame-1.0.0.js
+
+#######INC0405368v1 starts#########
+integration.b2b.seeq.report.support.email=lisa.k.hed@yopmail.com
+#######INC0405368v1 ends#########
+##added missing property on RDE2 to fix the Inventory IDD issue###
+COUNTRY=US
+
+#Added for MissingAAReportINC3441436
+report.query.reord.range = 10000
+SXSSFworkBook.memory.size = 100
+missingAA.flag = true
+missingAA.radio.flag = false
+
+task.excluded.cluster.ids=false
+cronjob.timertask.loadonstartup=false
+
+
+cvg.accountupload.error.file.location=${HYBRIS_DATA_DIR}\\EFITR_ACCOUNTUPLOAD_ERROR\\
+
+
+##########################NPI Search Physician US################################
+url.rest.npi.search.physician.us=https://npiregistry.cms.hhs.gov/api/?enumeration_type=NPI-1
+stub.npi.search.physician.simulate.enabled=N
+url.rest.npi.search.physician.timeout.us=60000
+url.rest.npi.search.physician.intercept.us=Y
+integration.b2b.npi.physiciansearch.support.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.physician.cleanup.report.support.email=Medtronic_Sapient_Support@yopmail.com
+
+########################## Mendix Integration################################
+
+stub.b2b.mendix.registration.enabled=N
+mendix.authorization.bearer.token=mPLibGmG9ANFqXoG6yv7xxXuxYz6
+mendix.api.url.bearertoken=XYJoP97goOHAHLlYATALGnshFWVA
+mendix.api.url.us=https://api-test.medtronic.com/api/v1/devices/registrations
+mendix.api.url.us=https://api-test.medtronic.com/api/v1/devices/registrations
+mendix.api.url.intercept.us=Y
+mendix.api.url.timeout.us=60000
+integration.b2b.mendix.failure.email=Medtronic_Sapient_Support@yopmail.com
+integration.b2b.hybris.resubmit.registration.mendix.support.email=Medtronic_Sapient_Support@yopmail.com
+
+integration.b2b.missingAA.report.support.email= sanjay.kumar@medtronic.com, rajesh.selvaraj@medtronic.com
+whitelist.blanket.domain=@gmail.com,@yopmail.com,@sapient.com,@mdt.com,@medtronic.com,@test.com
+#######INC0946497 starts#########
+integration.b2b.seeq.shipping.report.support.email=dustin.rothwell@medtronic.com,karma.lama@medtronic.com,raj.kesavan@medtronic.com,anil.arora@medtronic.com,brion.c.finlay@medtronic.com,ben.j.walker@medtronic.com,dl.corventisserversupport-level3@medtronic.com,ecommercesupport-global@medtronic.com
+#######INC0946497 ends#########
+
+#New property added for missing AA report - Start.
+aaReport.productCFN.value=PERF-TEST-726
+aaReport.accountNumber.value=0001106507
+aaReport.stockingLocation.value=1106507CP
+#New property added for missing AA report - End.
+#INC1316924 start#
+integration.hybris.linq.monitoring.daily.report.support.email=RS.myOrders@medtronic.com,dl.mmiserverandapplicationsupport@medtronic.com,rs.uslinqmonitoring@medtronic.com,pete.keen@medtronic.com,amie.bucksa@medtronic.com
+##################### CONNECT CHAGES ########################################
+stub.connect.ssotokenvalidation.enabled=Y
+connect.sso.token.validation.url=http://eshop.si.us.connect.medtronic.com/api/openid/connect/userinfo
+connect.sso.token.validation.url.intercept=Y
+connect.sso.token.validation.url.timeout=60000
+connect.sso.token.validation.url.content.type=application/x-www-form-urlencoded
+
+stub.connect.ssotokenrefresh.enabled=Y
+connect.sso.token.refresh.url=http://eshop.si.us.connect.medtronic.com/api/openid/connect/token
+connect.sso.token.refresh.url.bearer.token=Basic bWR0Y0pzOm1lZHRyb25pYw==
+connect.sso.token.refresh.url.intercept=Y
+connect.sso.token.refresh.url.timeout=60000
+connect.sso.token.refresh.url.content.type=application/x-www-form-urlencoded
+
+connect.sso.redirect.dashboard.url=https://eshop.si.us.connect.medtronic.com/api/core/sso/v1/SSORedirect
+connect.sso.redirect.portal.url=https://eshop.si.us.connect.medtronic.com/apps/portal/
+connect.sso.redirect.profile.preference=/profile-preferences
+connect.homepage.url=https://eshop.si.us.connect.medtronic.com
+connect.redirect.urls=cvgOrderDetailView,orderHistoryDetail
+integration.b2b.connect.sso.support.email=Medtronic_Sapient_Support@yopmail.com
+
+#New property added for missing AA report - End.
+
+##Adding new property for SEEQ type inventory schedule.
+seeq.ca.is.productCFN=5076110
+seeq.diagonistics.salesForce=US107
+########INC1112084 starts#########
+inactive.user.it.email.toList=stefania.ferrari@yopmail.com
+########INC1112084 ends#########
+
+
+#INC1467399 starts
+integration.b2b.hybris.dailystatus.report.support.email=avinash.pandey@medtronic.com;melissa.flicek@medtronic.com;annabelle.kirwood@medtronic.com;jeremy.w.holck@medtronic.com;ti-yuen.van.den.hurck@medtronic.com;jacek.staszewski@medtronic.com;maciej.grzybowski@medtronic.com;katarzyna.dmowska@medtronic.com;davorka.heringhaus@medtronic.com; martin.wiechert@medtronic.com;stefania.ferrari@medtronic.com;matteo.mozzi@medtronic.com;miray.kaymaz@medtronic.com;katarzyna.dmowska@medtronic.com;marc.lesniak@medtronic.com;sarah.weyers@medtronic.com;marianne.finke@medtronic.com;stella.nico@medtronic.com;jacek.staszewski@medtronic.com; robyn.harada@medtronic.com;josh.e.link@medtronic.com;ben.j.walker@medtronic.com;claudia.barone@medtronic.com;rs.eshopuk@medtronic.com; marcin.jankowski@medtronic.com;marcia.araujo@medtronic.com;stuart.mitchell@medtronic.com;tomoe.shinno@medtronic.com;craig.little@medtronic.com; jane.lester@medtronic.com;ecommercesupport-global@medtronic.com
+#INC1467399 ends
+
+#### NURO PRODUCTS PROPERTIES ###########
+nuro.device.gen1.productId=9090
+nuro.therapy.gen1.productId=9091
+nuro.charger.gen1.productId=9093
+
+installed.tenants=
+
+
+################ Versioning #########################
+cfn.gtn.feed.file.auto.scan=true
+cfn.gtn.hotfolder.toAddresses=receiver@test.com
+
+connect.sso.dashboard.deactivated_links=cmp_linkForCreateUser,cmp_linkForMyProfileUser,cmp_linkForMyProfileEmployee,cmp_linkForPOPending,cmp_linkForCreateCustomer,cmp_linkForCreateCustomerUser,cmp_linkForCreateMedtronicEmployee,cmp_linkForChangePassword,cmp_linkForBillReplace,cmp_linkForOrderHistory
+
+#INC2055401
+integration.b2b.order.ready.support.email=ecommercesupport-global@medtronic.com,rs.connect@medtronic.com
+open.order.enable=true
+
+
+
+################################## CRONJOB CR ########################################
+integration.b2b.order.incomplete.support.email=ecommercesupport-global@medtronic.com
+integration.b2b.order.failure.support.email=ecommercesupport-global@medtronic.com
+
+integration.b2b.mdtSupportOrderFailureEmail=ecommercesupport-global@medtronic.com
+
+
+
+
+cvg.active.attachment.a.notification.email.ids=RS.CVnotes@medtronic.com
+
+
+################################## CRONJOB CR ########################################
+
+log4j2.filter.threshold.type=ThresholdFilter
+log4j2.filter.threshold.level=INFO
+
+#Performance
+log4j2.appender.perf.type=RollingFile
+log4j2.appender.perf.name=perf
+log4j2.appender.perf.fileName=${HYBRIS_LOG_DIR}/mdt-perf.log
+log4j2.appender.perf.filePattern=${HYBRIS_LOG_DIR}/mdt-perf.log.%d{yyyy-MM-dd}
+log4j2.appender.perf.layout.type=PatternLayout
+log4j2.appender.perf.layout.pattern=%d %-5p [%t] [%c{1}] %m%n
+log4j2.appender.perf.policies.type=Policies
+log4j2.appender.perf.policies.time.type=TimeBasedTriggeringPolicy
+log4j2.appender.perf.filter.threshold.type=ThresholdFilter
+log4j2.appender.perf.filter.threshold.level=INFO
+
+
+#Integration
+log4j2.appender.Integration.type=RollingFile
+log4j2.appender.Integration.name=Integration
+log4j2.appender.Integration.fileName=${HYBRIS_LOG_DIR}/hybris_INBOUND.log
+log4j2.appender.Integration.filePattern=${HYBRIS_LOG_DIR}/hybris_INBOUND.log.%d{yyyy-MM-dd}
+log4j2.appender.Integration.layout.type=PatternLayout
+log4j2.appender.Integration.layout.pattern=%d %-5p [%t] [%c{1}] %m%n
+log4j2.appender.Integration.policies.type=Policies
+log4j2.appender.Integration.policies.time.type=TimeBasedTriggeringPolicy
+log4j2.appender.Integration.filter.threshold.type=ThresholdFilter
+log4j2.appender.Integration.filter.threshold.level=INFO
+
+log4j2.logger.medtronic.name=com.medtronic
+log4j2.logger.medtronic.level=INFO
+log4j2.logger.medtronic.additivity=false
+log4j2.logger.medtronic.appenderRefs=MedtronicLogger
+log4j2.logger.medtronic.appenderRef.MedtronicLogger.ref=perf
+
+log4j2.logger.integrationservices.name=com.medtronic.b2b.integrationservices
+log4j2.logger.integrationservices.level=INFO
+log4j2.logger.integrationservices.additivity=true
+log4j2.logger.integrationservices.appenderRefs=IntegrationLogger
+log4j2.logger.integrationservices.appenderRef.IntegrationLogger.ref=Integration
+
+log4j2.logger.solrIndexThreadLogger.name=org.apache.solr
+log4j2.logger.solrIndexThreadLogger.level=INFO
+log4j2.logger.solrIndexThreadLogger.additivity=true
+log4j2.logger.solrIndexThreadLogger.appenderRefs=SolrLogger
+log4j2.logger.solrIndexThreadLogger.appenderRef.SolrLogger.ref=SOLRINDEXER
+
+log4j2.logger.persistenceLogger.name=de.hybris.platform.persistence.property.internal
+log4j2.logger.persistenceLogger.level=DEBUG
+log4j2.logger.persistenceLogger.additivity=true
+log4j2.logger.persistenceLogger.appenderRefs=PersistenceLog
+log4j2.logger.persistenceLogger.appenderRef.PersistenceLog.ref=PersistenceLog
+
+
+cvg.excel.cfn.qty.header=CFN,Qty Scanned
+#-----------------------------------------log4j2 End---------------------------------------------------------------
+
+#INC4844100
+cvg.active.attachment.a.notification.email.ids=RS.CVnotes@medtronic.com
+
+
+#HSQL DB configuration
+#db.url=jdbc:hsqldb:file:${HYBRIS_DATA_DIR}/hsqldb/mydb;shutdown=true;hsqldb.cache_rows=100000;hsqldb.cache_size=20000;hsqldb.write_delay_millis=1000;hsqldb.inc_backup=true;hsqldb.defrag_limit=2;hsqldb.nio_data_file=false
+#db.driver=org.hsqldb.jdbcDriver
+#db.username=sa
+#db.password=
+#db.tableprefix=
+
+#installed.tenants=junit,foo,t1,t2
+#ycommercewebservicestest.enableV1 = true
+hjmp.bulk.load.enabled=false
+
+backoffice.fill.typefacade.cache.on.startup=false
+cronjob.timertask.loadonstartup=false
+#cockpit.ytestid.enabled = false
+tenant.restart.on.connection.error=true
+
+#Custom local mailing property ----> Mailtrap codehero78@gmail.com
+mail.smtp.server=smtp.mailtrap.io
+mail.smtp.port=25
+mail.username=4b48837751a8f9
+mail.password=b7851c2b194ddd
+

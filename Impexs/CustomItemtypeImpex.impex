@@ -1,0 +1,7 @@
+insert_update CustomItemtype;uid[unique=true];name;addressString
+;123;arnesh;MeriLocation
+;124;HERO;MeriLocation1
+;125;Code;MeriLocation2
+
+
+

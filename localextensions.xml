@@ -123,5 +123,6 @@
      <extension name="trainingtest"/>
      <extension name="traininginitialdata"/>
      <extension name="trainingstorefront"/>
+    <extension name="trainingBackofficeExtension"/>
   </extensions>
 </hybrisconfig>

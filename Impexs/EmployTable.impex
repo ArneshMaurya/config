@@ -1,0 +1,13 @@
+insert_update EmployTable; empId[unique = true]; empkey ; job
+                         ; emp001              ; emp001 ; reader
+                         ; emp002              ; emp002 ; runner
+                         ; emp003              ; emp003 ; coder
+                         ; emp004              ; emp004 ; reader
+                         ; emp005              ; emp005 ; cook
+
+
+insert_update JobTable; jobId[unique = true]; jobkey ; job
+                      ; job001              ; eJobKey ; reader
+                      ; job002              ; eJobKey ; runner
+                      ; job003              ; eJobKey ; coder
+                      ; job004              ; eJobKey ; cook
